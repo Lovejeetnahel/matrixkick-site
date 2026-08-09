@@ -9,6 +9,12 @@ const services = [
   { b: "Start here", t: "🔍 Automation Audit", d: "A full review of your intake, follow-up, and admin workflows with a prioritized automation plan - know exactly what to automate first." }
 ];
 
+const demos = [
+  { t: "This Website", d: "Built and deployed the same day: Next.js 15 + TypeScript + React 19 on Vercel, custom domain, SEO schema, working lead pipeline. Repo is public - inspect every line.", link: "https://github.com/Lovejeetnahel/matrixkick-site", cta: "View the code" },
+  { t: "LeadReply - Running On This Page", d: "The form below is wired to a live n8n automation. Submit it and the system replies to your inbox in seconds - the demo runs on you, not on a video.", link: "#lead-form", cta: "Trigger it yourself" },
+  { t: "AI Content Pipeline", d: "An n8n system producing 10-15 AI-generated Reels and Stories daily: AI voice, AI imagery, FFmpeg video rendering, auto-published through the Meta Graph API.", link: "#lead-form", cta: "Ask for a walkthrough" }
+];
+
 const tiers = [
   { n: "Automation Audit", a: "$249", p: "one-time", f: ["Workflow & lead-flow review", "Prioritized automation roadmap", "ROI estimate per automation", "Credited if you book a build"], cta: "Book Audit", feat: false },
   { n: "LeadReply System", a: "$999", p: "setup + $149/mo", f: ["Instant AI replies to every inquiry, 24/7", "Personalized to your services & tone", "Automatic follow-up sequences", "Monthly tuning & monitoring"], cta: "Get LeadReply", feat: true },
@@ -31,6 +37,18 @@ export default function Home() {
             <span className="badge">{s.b}</span>
             <h3>{s.t}</h3>
             <p>{s.d}</p>
+          </div>
+        ))}
+      </div>
+      <h2 className="sec-title">Live Demos - Proof, Not Promises</h2>
+      <p className="sec-sub">No fake portfolios. These systems are real, running, and inspectable right now.</p>
+      <div className="grid">
+        {demos.map((m) => (
+          <div className="card" key={m.t}>
+            <span className="badge">Live</span>
+            <h3>{m.t}</h3>
+            <p>{m.d}</p>
+            <p style={{ marginTop: 14 }}><a href={m.link} className="btn" style={{ padding: "10px 22px", fontSize: 15 }}>{m.cta}</a></p>
           </div>
         ))}
       </div>
@@ -60,4 +78,3 @@ export default function Home() {
     </main>
   );
 }
-
